@@ -1,16 +1,20 @@
+import SearchMovies from 'pages/Movies';
+import HomePage from 'pages/Home';
+import { Layout } from './Layout/Layout';
+import MovieDetails from 'pages/MovieDetails';
+// import { fetchMovies } from "./api";
+import { Route, Routes } from 'react-router-dom';
+
 export const App = () => {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<HomePage />} />
+          <Route path="movies" element={<SearchMovies />} />
+          <Route path="movies/:movieId" element={<MovieDetails />} />
+        </Route>
+      </Routes>
+    </>
   );
 };
