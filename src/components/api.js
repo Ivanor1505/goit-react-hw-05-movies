@@ -27,3 +27,10 @@ export const fetchActorsById = async (movieId) => {
     return data;
 };
 
+export const fetchReviewsById = async (movieId) => {
+  const resp = await axios.get(`/movie/${movieId}/reviews?`);
+  const data = resp.data;
+    // console.log(query);
+    return data;
+};
+

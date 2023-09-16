@@ -5,7 +5,7 @@ import { NavLink, Link, useParams, Outlet } from 'react-router-dom';
 export default function MovieDetails() {
   const params = useParams();
   const [quiz, setQuiz] = useState(null);
-  console.log('first', quiz);
+  // console.log('first', quiz);
 
   useEffect(() => {
     async function fetchQuiz() {
@@ -33,7 +33,7 @@ export default function MovieDetails() {
           <p>{quiz.overview}</p>
           <p>Genres: {quiz.genres.map(genre => genre.name).join(', ')}</p>
           <NavLink to="cast">Cast</NavLink>
-          {/* <NavLink to="reviews">Review</NavLink> */}
+          <NavLink to="reviews">Review</NavLink>
           <Outlet />
         </>
       )}
