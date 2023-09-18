@@ -1,13 +1,25 @@
 {
   "files": {
-    "main.css": "/goit-react-hw-05-movies/static/css/main.7acaea2f.css",
-    "main.js": "/goit-react-hw-05-movies/static/js/main.02a799a0.js",
+    "main.css": "/goit-react-hw-05-movies/static/css/main.b5320759.css",
+    "main.js": "/goit-react-hw-05-movies/static/js/main.7422fc24.js",
+    "static/js/310.9ef22174.chunk.js": "/goit-react-hw-05-movies/static/js/310.9ef22174.chunk.js",
+    "static/js/304.9a8b5c34.chunk.js": "/goit-react-hw-05-movies/static/js/304.9a8b5c34.chunk.js",
+    "static/js/33.1d5c374b.chunk.js": "/goit-react-hw-05-movies/static/js/33.1d5c374b.chunk.js",
+    "static/js/387.cfe24637.chunk.js": "/goit-react-hw-05-movies/static/js/387.cfe24637.chunk.js",
+    "static/js/779.199e7887.chunk.js": "/goit-react-hw-05-movies/static/js/779.199e7887.chunk.js",
+    "static/js/279.cde0608f.chunk.js": "/goit-react-hw-05-movies/static/js/279.cde0608f.chunk.js",
     "index.html": "/goit-react-hw-05-movies/index.html",
-    "main.7acaea2f.css.map": "/goit-react-hw-05-movies/static/css/main.7acaea2f.css.map",
-    "main.02a799a0.js.map": "/goit-react-hw-05-movies/static/js/main.02a799a0.js.map"
+    "main.b5320759.css.map": "/goit-react-hw-05-movies/static/css/main.b5320759.css.map",
+    "main.7422fc24.js.map": "/goit-react-hw-05-movies/static/js/main.7422fc24.js.map",
+    "310.9ef22174.chunk.js.map": "/goit-react-hw-05-movies/static/js/310.9ef22174.chunk.js.map",
+    "304.9a8b5c34.chunk.js.map": "/goit-react-hw-05-movies/static/js/304.9a8b5c34.chunk.js.map",
+    "33.1d5c374b.chunk.js.map": "/goit-react-hw-05-movies/static/js/33.1d5c374b.chunk.js.map",
+    "387.cfe24637.chunk.js.map": "/goit-react-hw-05-movies/static/js/387.cfe24637.chunk.js.map",
+    "779.199e7887.chunk.js.map": "/goit-react-hw-05-movies/static/js/779.199e7887.chunk.js.map",
+    "279.cde0608f.chunk.js.map": "/goit-react-hw-05-movies/static/js/279.cde0608f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7acaea2f.css",
-    "static/js/main.02a799a0.js"
+    "static/css/main.b5320759.css",
+    "static/js/main.7422fc24.js"
   ]
 }
