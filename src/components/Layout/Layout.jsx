@@ -16,7 +16,7 @@ export const Layout = () => {
           <NavigationLink to="/movies">Movies</NavigationLink>
         </Navigation>
       </Header>
-      <Suspense>
+      <Suspense fallback={<div>Loading...</div>}>
         <Outlet />
       </Suspense>
     </LayoutContainer>

@@ -5,6 +5,7 @@ import { ListTrendingMovies } from './Home.styled';
 
 export default function HomePage() {
   const [trendingMovies, setTrendingMovies] = useState([]);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     async function getTrendingMovies() {
@@ -13,7 +14,8 @@ export default function HomePage() {
         setTrendingMovies(trendingData.results);
         // console.log('ftrendingData', trendingData)
       } catch (error) {
-        console.log('Помилка при завантаженні даних:', error);
+        console.log(error);
+        setError('Помилка при завантаженні даних.');
       }
     }
     getTrendingMovies();
@@ -29,6 +31,7 @@ export default function HomePage() {
           </li>
         ))}
       </ListTrendingMovies>
+      {error && <p className="error">{error}</p>}
     </div>
   );
 }

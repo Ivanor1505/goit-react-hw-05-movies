@@ -17,8 +17,8 @@ export default function MovieDetails() {
   const params = useParams();
   const [quiz, setQuiz] = useState(null);
   const location = useLocation();
-  const locationGoBack = location.state?.from ?? '/movies';
-  // console.log('first', location.state);
+  const locationGoBack = location.state?.from ?? '/';
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     async function fetchQuiz() {
@@ -27,6 +27,7 @@ export default function MovieDetails() {
         setQuiz(fetchedQuiz);
       } catch (error) {
         console.log(error);
+        setError('Помилка при завантаженні даних.');
       }
     }
     fetchQuiz();
@@ -50,7 +51,8 @@ export default function MovieDetails() {
             </MovieGenres>
             <InfoLink to="cast">Cast</InfoLink>
             <InfoLink to="reviews">Review</InfoLink>
-            <Suspense>
+            {error && <p className="error">{error}</p>}
+            <Suspense fallback={<div>Loading...</div>}>
               <Outlet />
             </Suspense>
           </MovieInfoContainer>

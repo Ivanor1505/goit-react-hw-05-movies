@@ -11,6 +11,7 @@ import {
 const Reviews = () => {
   const { movieId } = useParams();
   const [reviews, setReviews] = useState([]);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     async function getReviewsData() {
@@ -19,20 +20,24 @@ const Reviews = () => {
         setReviews(data.results);
       } catch (error) {
         console.log(error);
+        setError('Помилка при завантаженні даних.');
       }
     }
     getReviewsData();
   }, [movieId]);
 
   return (
-    <ReviewsList>
-      {reviews.map(({ author, content, id }) => (
-        <ReviewItem key={id}>
-          <ReviewName>{author}</ReviewName>
-          <ReviewText>{content}</ReviewText>
-        </ReviewItem>
-      ))}
-    </ReviewsList>
+    <div>
+      <ReviewsList>
+        {reviews.map(({ author, content, id }) => (
+          <ReviewItem key={id}>
+            <ReviewName>{author}</ReviewName>
+            <ReviewText>{content}</ReviewText>
+          </ReviewItem>
+        ))}
+      </ReviewsList>
+      {error && <p className="error">{error}</p>}
+    </div>
   );
 };
 
