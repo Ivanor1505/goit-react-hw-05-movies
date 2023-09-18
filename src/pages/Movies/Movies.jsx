@@ -1,12 +1,16 @@
 import { fetchMovies } from 'components/api';
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useSearchParams } from 'react-router-dom';
 import { ListMovies, MovieSearch, SearchButton } from './Movies.styled';
 
 export default function SearchMovies() {
+  const location = useLocation();
+  const [params, setParams] = useSearchParams();
   const [searchMovies, setSearchMovies] = useState([]);
   const [searchInput, setSearchInput] = useState('');
   const [searchData, setSearchData] = useState('');
+
+  // console.log('location', location);
 
   useEffect(() => {
     async function findMovie() {
@@ -17,6 +21,7 @@ export default function SearchMovies() {
         console.log(error);
       }
     }
+
     findMovie();
   }, [searchData]);
 
@@ -27,6 +32,8 @@ export default function SearchMovies() {
   const handleSubmit = e => {
     e.preventDefault();
     setSearchData(searchInput);
+    params.set('query', searchInput);
+    setParams(params);
   };
 
   return (
@@ -40,10 +47,11 @@ export default function SearchMovies() {
         <SearchButton type="submit">Search</SearchButton>
       </form>
       <ListMovies>
-        {' '}
         {searchMovies.map(item => (
           <li key={item.id}>
-            <Link to={`/movies/${item.id}`}>{item.original_title}</Link>
+            <Link to={`/movies/${item.id}`} state={{ from: location }}>
+              {item.original_title}
+            </Link>
           </li>
         ))}
       </ListMovies>

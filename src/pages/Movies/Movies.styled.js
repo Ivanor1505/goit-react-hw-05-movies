@@ -35,10 +35,10 @@ export const SearchButton = styled.button`
 `;
 
 export const ListMovies = styled.ul`
-font-size: 20px;
-display: flex;
-flex-direction: column;
-gap: 10px;
-list-style: none;
-padding: 0;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
 `;

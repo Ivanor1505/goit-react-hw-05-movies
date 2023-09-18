@@ -5,6 +5,7 @@ import {
   Navigation,
   NavigationLink,
 } from './Layout.styled';
+import { Suspense } from 'react';
 
 export const Layout = () => {
   return (
@@ -15,7 +16,9 @@ export const Layout = () => {
           <NavigationLink to="/movies">Movies</NavigationLink>
         </Navigation>
       </Header>
-      <Outlet />
+      <Suspense>
+        <Outlet />
+      </Suspense>
     </LayoutContainer>
   );
 };

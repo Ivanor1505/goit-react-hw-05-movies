@@ -1,6 +1,6 @@
 import { fetchMoviesById } from 'components/api';
-import { useEffect, useState } from 'react';
-import { useParams, Outlet } from 'react-router-dom';
+import { Suspense, useEffect, useState } from 'react';
+import { useParams, Outlet, useLocation } from 'react-router-dom';
 import {
   BackLink,
   InfoLink,
@@ -16,7 +16,9 @@ import {
 export default function MovieDetails() {
   const params = useParams();
   const [quiz, setQuiz] = useState(null);
-  // console.log('first', quiz);
+  const location = useLocation();
+  const locationGoBack = location.state?.from ?? '/movies';
+  // console.log('first', location.state);
 
   useEffect(() => {
     async function fetchQuiz() {
@@ -32,7 +34,7 @@ export default function MovieDetails() {
 
   return (
     <MovieContainer>
-      <BackLink to="/movies">← Go back</BackLink>
+      <BackLink to={locationGoBack}>← Go back</BackLink>
       {quiz && (
         <>
           <MovieImage
@@ -48,7 +50,9 @@ export default function MovieDetails() {
             </MovieGenres>
             <InfoLink to="cast">Cast</InfoLink>
             <InfoLink to="reviews">Review</InfoLink>
-            <Outlet />
+            <Suspense>
+              <Outlet />
+            </Suspense>
           </MovieInfoContainer>
         </>
       )}
