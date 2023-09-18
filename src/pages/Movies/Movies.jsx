@@ -1,6 +1,7 @@
 import { fetchMovies } from 'components/api';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { ListMovies, MovieSearch, SearchButton } from './Movies.styled';
 
 export default function SearchMovies() {
   const [searchMovies, setSearchMovies] = useState([]);
@@ -31,18 +32,21 @@ export default function SearchMovies() {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <input
+        <MovieSearch
           type="text"
           value={searchInput}
           onChange={handleInputChange}
-        ></input>
-        <button type="submit">Search</button>
+        ></MovieSearch>
+        <SearchButton type="submit">Search</SearchButton>
       </form>
-      {searchMovies.map(item => (
-        <li key={item.id}>
-          <Link to={`/movies/${item.id}`}>{item.original_title}</Link>
-        </li>
-      ))}
+      <ListMovies>
+        {' '}
+        {searchMovies.map(item => (
+          <li key={item.id}>
+            <Link to={`/movies/${item.id}`}>{item.original_title}</Link>
+          </li>
+        ))}
+      </ListMovies>
     </div>
   );
 }

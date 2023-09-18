@@ -1,6 +1,7 @@
 import { fetchActorsById } from '../api';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { CastList, CastItem, CastImg } from './Cast.styled';
 
 const Cast = () => {
   const { movieId } = useParams();
@@ -11,7 +12,7 @@ const Cast = () => {
       try {
         const data = await fetchActorsById(movieId);
         setCast(data.cast);
-        console.log('data', data);
+        // console.log('data', data);
       } catch (error) {
         console.log(error);
       }
@@ -20,17 +21,17 @@ const Cast = () => {
   }, [movieId]);
 
   return (
-    <ul>
+    <CastList>
       {cast.map(({ name, profile_path, id }) => (
-        <li key={id}>
+        <CastItem key={id}>
           <h3>{name}</h3>
-          <img
-            src={`https://image.tmdb.org/t/p/w200${profile_path}`}
+          <CastImg
+            src={`https://image.tmdb.org/t/p/w500${profile_path}`}
             alt={name}
           />
-        </li>
+        </CastItem>
       ))}
-    </ul>
+    </CastList>
   );
 };
 
