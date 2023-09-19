@@ -29,7 +29,11 @@ const Cast = () => {
           <CastItem key={id}>
             <h3>{name}</h3>
             <CastImg
-              src={`https://image.tmdb.org/t/p/w500${profile_path}`}
+              src={
+                profile_path !== null
+                  ? `https://image.tmdb.org/t/p/w500${profile_path}`
+                  : 'https://info.renome.ua/wp-content/uploads/2021/09/placeholder.png'
+              }
               alt={name}
             />
           </CastItem>

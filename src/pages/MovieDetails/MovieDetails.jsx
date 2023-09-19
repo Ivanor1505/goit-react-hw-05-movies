@@ -33,13 +33,19 @@ export default function MovieDetails() {
     fetchQuiz();
   }, [params.movieId]);
 
+  // const imgURl =
+
   return (
     <MovieContainer>
       <BackLink to={locationGoBack}>← Go back</BackLink>
       {quiz && (
         <>
           <MovieImage
-            src={`https://image.tmdb.org/t/p/w300${quiz.poster_path}`}
+            src={
+              quiz.poster_path !== null
+                ? `https://image.tmdb.org/t/p/w300${quiz.poster_path}`
+                : 'https://info.renome.ua/wp-content/uploads/2021/09/placeholder.png'
+            }
             alt={quiz.original_title}
           ></MovieImage>
           <MovieInfoContainer>
@@ -47,7 +53,7 @@ export default function MovieDetails() {
             <MovieScore>{`UserScore: ${quiz.vote_average}`}</MovieScore>
             <MovieOverview>Overview: {quiz.overview}</MovieOverview>
             <MovieGenres>
-              Genres: {quiz.genres.map(genre => genre.name).join(', ')}
+              Genres: {quiz.genres.map(genre => genre.name).join(', ')}?🤣
             </MovieGenres>
             <InfoLink to="cast">Cast</InfoLink>
             <InfoLink to="reviews">Review</InfoLink>
