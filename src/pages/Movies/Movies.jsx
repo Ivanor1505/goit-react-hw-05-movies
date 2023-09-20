@@ -10,7 +10,7 @@ export default function SearchMovies() {
   const [searchInput, setSearchInput] = useState('');
   // const [searchData, setSearchData] = useState('');
 
-  console.log('searchMovies', searchMovies);
+  // console.log('searchMovies', searchMovies);
 
   useEffect(() => {
     async function findMovie() {
