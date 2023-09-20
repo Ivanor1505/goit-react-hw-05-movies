@@ -10,16 +10,17 @@ export default function SearchMovies() {
   const [searchInput, setSearchInput] = useState('');
   // const [searchData, setSearchData] = useState('');
 
-  // console.log('location', location);
+  console.log('searchMovies', searchMovies);
 
   useEffect(() => {
     async function findMovie() {
       try {
+        setSearchMovies([]);
         const dataMovie = await fetchMovies(
           '/search/movie',
           params.get('query')
         );
-        setSearchMovies(dataMovie.results);
+        params.get('query') && setSearchMovies(dataMovie.results);
       } catch (error) {
         console.log(error);
       }
@@ -49,7 +50,7 @@ export default function SearchMovies() {
         ></MovieSearch>
         <SearchButton type="submit">Search</SearchButton>
       </form>
-      <MoviesList movies={searchMovies} />
+      {searchMovies.length !== [] && <MoviesList movies={searchMovies} />}
     </div>
   );
 }
