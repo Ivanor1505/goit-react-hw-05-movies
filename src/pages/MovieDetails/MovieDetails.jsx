@@ -1,5 +1,5 @@
 import { fetchMoviesById } from 'components/api';
-import { Suspense, useEffect, useState } from 'react';
+import { Suspense, useEffect, useRef, useState } from 'react';
 import { useParams, Outlet, useLocation } from 'react-router-dom';
 import {
   BackLink,
@@ -17,7 +17,7 @@ export default function MovieDetails() {
   const params = useParams();
   const [quiz, setQuiz] = useState(null);
   const location = useLocation();
-  const locationGoBack = location.state?.from ?? '/';
+  const locationGoBack = useRef(location?.state?.from ?? '/');
   const [error, setError] = useState(null);
 
   useEffect(() => {
@@ -37,7 +37,7 @@ export default function MovieDetails() {
 
   return (
     <MovieContainer>
-      <BackLink to={locationGoBack}>← Go back</BackLink>
+      <BackLink to={locationGoBack.current}>← Go back</BackLink>
       {quiz && (
         <>
           <MovieImage
@@ -53,7 +53,7 @@ export default function MovieDetails() {
             <MovieScore>{`UserScore: ${quiz.vote_average}`}</MovieScore>
             <MovieOverview>Overview: {quiz.overview}</MovieOverview>
             <MovieGenres>
-              Genres: {quiz.genres.map(genre => genre.name).join(', ')}?🤣
+              Genres: {quiz.genres.map(genre => genre.name).join(', ')}
             </MovieGenres>
             <InfoLink to="cast">Cast</InfoLink>
             <InfoLink to="reviews">Review</InfoLink>
