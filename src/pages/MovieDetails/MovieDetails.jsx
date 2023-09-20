@@ -19,7 +19,7 @@ export default function MovieDetails() {
   const location = useLocation();
   const locationGoBack = useRef(location.state?.from ?? '/');
   const [error, setError] = useState(null);
-  console.log('location', locationGoBack);
+  // console.log('location', locationGoBack);
 
   useEffect(() => {
     async function fetchQuiz() {
