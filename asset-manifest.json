@@ -1,25 +1,25 @@
 {
   "files": {
     "main.css": "/goit-react-hw-05-movies/static/css/main.b5320759.css",
-    "main.js": "/goit-react-hw-05-movies/static/js/main.551f568c.js",
+    "main.js": "/goit-react-hw-05-movies/static/js/main.1ef0c98b.js",
     "static/js/310.cd1b5271.chunk.js": "/goit-react-hw-05-movies/static/js/310.cd1b5271.chunk.js",
     "static/js/544.0de84af5.chunk.js": "/goit-react-hw-05-movies/static/js/544.0de84af5.chunk.js",
-    "static/js/33.83ee7ebd.chunk.js": "/goit-react-hw-05-movies/static/js/33.83ee7ebd.chunk.js",
+    "static/js/33.45ef00a1.chunk.js": "/goit-react-hw-05-movies/static/js/33.45ef00a1.chunk.js",
     "static/js/387.5c8a0328.chunk.js": "/goit-react-hw-05-movies/static/js/387.5c8a0328.chunk.js",
     "static/js/779.e45a2c49.chunk.js": "/goit-react-hw-05-movies/static/js/779.e45a2c49.chunk.js",
     "static/js/279.cde0608f.chunk.js": "/goit-react-hw-05-movies/static/js/279.cde0608f.chunk.js",
     "index.html": "/goit-react-hw-05-movies/index.html",
     "main.b5320759.css.map": "/goit-react-hw-05-movies/static/css/main.b5320759.css.map",
-    "main.551f568c.js.map": "/goit-react-hw-05-movies/static/js/main.551f568c.js.map",
+    "main.1ef0c98b.js.map": "/goit-react-hw-05-movies/static/js/main.1ef0c98b.js.map",
     "310.cd1b5271.chunk.js.map": "/goit-react-hw-05-movies/static/js/310.cd1b5271.chunk.js.map",
     "544.0de84af5.chunk.js.map": "/goit-react-hw-05-movies/static/js/544.0de84af5.chunk.js.map",
-    "33.83ee7ebd.chunk.js.map": "/goit-react-hw-05-movies/static/js/33.83ee7ebd.chunk.js.map",
+    "33.45ef00a1.chunk.js.map": "/goit-react-hw-05-movies/static/js/33.45ef00a1.chunk.js.map",
     "387.5c8a0328.chunk.js.map": "/goit-react-hw-05-movies/static/js/387.5c8a0328.chunk.js.map",
     "779.e45a2c49.chunk.js.map": "/goit-react-hw-05-movies/static/js/779.e45a2c49.chunk.js.map",
     "279.cde0608f.chunk.js.map": "/goit-react-hw-05-movies/static/js/279.cde0608f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b5320759.css",
-    "static/js/main.551f568c.js"
+    "static/js/main.1ef0c98b.js"
   ]
 }
