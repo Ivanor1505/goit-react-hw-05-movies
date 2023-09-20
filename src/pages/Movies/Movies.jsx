@@ -8,14 +8,17 @@ export default function SearchMovies() {
   const [params, setParams] = useSearchParams();
   const [searchMovies, setSearchMovies] = useState([]);
   const [searchInput, setSearchInput] = useState('');
-  const [searchData, setSearchData] = useState('');
+  // const [searchData, setSearchData] = useState('');
 
   // console.log('location', location);
 
   useEffect(() => {
     async function findMovie() {
       try {
-        const dataMovie = await fetchMovies('/search/movie', searchData);
+        const dataMovie = await fetchMovies(
+          '/search/movie',
+          params.get('query')
+        );
         setSearchMovies(dataMovie.results);
       } catch (error) {
         console.log(error);
@@ -23,7 +26,7 @@ export default function SearchMovies() {
     }
 
     findMovie();
-  }, [searchData]);
+  }, [params]);
 
   const handleInputChange = e => {
     setSearchInput(e.target.value);
@@ -31,7 +34,7 @@ export default function SearchMovies() {
 
   const handleSubmit = e => {
     e.preventDefault();
-    setSearchData(searchInput);
+    setSearchInput(searchInput);
     params.set('query', searchInput);
     setParams(params);
   };

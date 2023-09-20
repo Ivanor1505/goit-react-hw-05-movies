@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 export const MovieContainer = styled.div`
   display: flex;
@@ -19,7 +19,7 @@ export const MovieInfoContainer = styled.div`
   text-align: center;
 `;
 
-export const BackLink = styled(Link)`
+export const BackLink = styled(NavLink)`
   display: inline-block;
   padding: 10px 20px;
   margin-right: 10px;
